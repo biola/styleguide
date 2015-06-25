@@ -17,8 +17,8 @@
     "bower_components",
     "docs",
     "gulpfile.js",
-    "node_modules",
-    "src"
+    "index.html",
+    "node_modules"
   ],
   "dependencies": {
     "bootstrap": "~> 3.3.5",
