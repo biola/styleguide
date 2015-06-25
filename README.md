@@ -1,6 +1,5 @@
-# biola-styleguide
-Styleguide for biola frontend websites.
-
+# Biola Styleguide
+Styleguide for biola frontend websites. [View Docs](http://biola.github.io/styleguide)
 
 ## Development
 
@@ -16,4 +15,4 @@ Styleguide for biola frontend websites.
     # Build assets, start server, and watch for changes
     gulp
     
-The server should start at http://localhost:8080 by default. As long as gulp is running, it will automatically watch for changes in the `src` folder and recompile the changes into the `dist` folder. 
+The server should start at [http://localhost:8080](http://localhost:8080) by default. As long as gulp is running, it will automatically watch for changes in the `src` folder and recompile the changes into the `dist` folder. 
