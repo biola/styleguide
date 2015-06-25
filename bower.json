@@ -1,0 +1,28 @@
+{
+  "name": "biola-styleguide",
+  "description": "Styleguide for biola's frontend websites",
+  "keywords": [
+    "css",
+    "js"
+  ],
+  "homepage": "http://biola.github.io/styleguide",
+  "license": "MIT",
+  "moduleType": "globals",
+  "main": [
+    "dist/css/biola-styleguide.css",
+    "dist/js/biola-styleguide.js"
+  ],
+  "ignore": [
+    "/.*",
+    "_config.yml",
+    "CNAME",
+    "composer.json",
+    "CONTRIBUTING.md",
+    "docs",
+    "js/tests",
+    "test-infra"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.1"
+  }
+}

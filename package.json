@@ -1,0 +1,43 @@
+{
+  "name": "biola-styleguide",
+  "version": "1.0.0",
+  "description": "Styleguide for Biola's frontend websites",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-sass": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biola/styleguide.git"
+  },
+  "keywords": [
+    "biola",
+    "styleguide",
+    "css",
+    "js"
+  ],
+  "author": "Ryan Hall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/biola/styleguide/issues"
+  },
+  "homepage": "http://biola.github.io/styleguide"
+}

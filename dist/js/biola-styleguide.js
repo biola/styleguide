@@ -1,0 +1,6 @@
+test = function() {
+  return 1 + 2;
+};
+
+console.log(test());
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsImZpbGUiOiJiaW9sYS1zdHlsZWd1aWRlLmpzIiwic291cmNlc0NvbnRlbnQiOlsidGVzdCA9IGZ1bmN0aW9uKCkge1xuICByZXR1cm4gMSArIDI7XG59O1xuXG5jb25zb2xlLmxvZyh0ZXN0KCkpOyJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
