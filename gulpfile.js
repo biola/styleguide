@@ -9,8 +9,7 @@ var sass = require('gulp-sass'); // Converts SASS to CSS
 var concat = require('gulp-concat'); // Merges multiple files into one
 var uglify = require('gulp-uglify'); // Compresses javascript
 var rename = require('gulp-rename'); // Renames destination files
-var minifyCss = require('gulp-minify-css'); // Minifies CSS
-var minifyHTML = require('gulp-html-minifier'); // Minifies HTML
+var minifyCss = require('gulp-minify-css'); // Compresses CSS
 var sourcemaps = require('gulp-sourcemaps'); // Maps compiled assets to source assets
 var connect = require('gulp-connect'); // Creates web server
 
@@ -46,25 +45,6 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('elements', function() {
-  return gulp.src('src/elements/*.html')
-    .pipe(minifyHTML({
-      collapseWhitespace: true,
-      conservativeCollapse: true,
-      preserveLineBreaks: true,
-      removeComments: true,
-      removeCommentsFromCDATA: true,
-      minifyJS: true,
-      minifyCSS: true
-    }))
-    .pipe(gulp.dest('dist/elements'));
-});
-
-// Copy bower files to dist files into docs folder
-gulp.task('docs', function() {
-  gulp.src('dist/**/*').pipe(gulp.dest('docs/vendor/biola-styleguide'));
-});
-
 // Start server
 gulp.task('server', function() {
   connect.server();
@@ -72,13 +52,12 @@ gulp.task('server', function() {
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-  gulp.watch('src/javascripts/*.js', ['lint', 'scripts', 'docs']);
-  gulp.watch('src/stylesheets/*.scss', ['sass', 'docs']);
-  gulp.watch('src/elements/*.html', ['elements', 'docs']);
+  gulp.watch('src/javascripts/*.js', ['lint', 'scripts']);
+  gulp.watch('src/stylesheets/*.scss', ['sass']);
 });
 
 // build task processes compresses and minifies all files into the dist folder
-gulp.task('build', ['lint', 'sass', 'scripts', 'elements', 'docs']);
+gulp.task('build', ['lint', 'sass', 'scripts']);
 
 // develop task runs build then starts a server and watches for changes.
 gulp.task('develop', ['build', 'server', 'watch']);
