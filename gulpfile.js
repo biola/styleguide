@@ -12,6 +12,7 @@ var rename = require('gulp-rename'); // Renames destination files
 var minifyCss = require('gulp-minify-css'); // Compresses CSS
 var sourcemaps = require('gulp-sourcemaps'); // Maps compiled assets to source assets
 var connect = require('gulp-connect'); // Creates web server
+var bower = require('gulp-bower'); // Runs bower install
 
 // Lint Task - checks for javascript and syntax errors
 gulp.task('lint', function() {
@@ -50,6 +51,11 @@ gulp.task('server', function() {
   connect.server();
 });
 
+// Run bower install
+gulp.task('bower', function() {
+  return bower()
+});
+
 // Watch Files For Changes
 gulp.task('watch', function() {
   gulp.watch('src/javascripts/*.js', ['lint', 'scripts']);
@@ -60,7 +66,7 @@ gulp.task('watch', function() {
 gulp.task('build', ['lint', 'sass', 'scripts']);
 
 // develop task runs build then starts a server and watches for changes.
-gulp.task('develop', ['build', 'server', 'watch']);
+gulp.task('develop', ['bower', 'build', 'server', 'watch']);
 
 // Default Task
 gulp.task('default', ['develop']);
