@@ -54,18 +54,24 @@
       @include content-columns($grid-columns/$i);
     }
   }
-  #{$list} {
-    &.list-bordered {
-      > li:first-child {
-        border-top-width:1px;
-      }
-    }
-    > li {
-      -webkit-column-break-inside: avoid; // Chrome, Safari, Opera
-                page-break-inside: avoid; // Firefox
-                     break-inside: avoid; // IE 10+
-    }
-  }
+  // TODO: This is not compiling for some reason, I get the following error:
+  // Error in plugin 'sass'
+  // Message:
+  //     src/stylesheets/components/_lists.scss
+  //   56:4  invalid selector after
+  //
+  // #{$list} {
+  //   &.list-bordered {
+  //     > li:first-child {
+  //       border-top-width:1px;
+  //     }
+  //   }
+  //   > li {
+  //     -webkit-column-break-inside: avoid; // Chrome, Safari, Opera
+  //               page-break-inside: avoid; // Firefox
+  //                    break-inside: avoid; // IE 10+
+  //   }
+  // }
 }
 
 @media (min-width:$screen-sm-min) {

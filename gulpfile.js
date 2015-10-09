@@ -64,7 +64,7 @@ gulp.task('docs', function() {
 
 // Start server
 gulp.task('server', function() {
-  // connect.server();
+  connect.server();
 });
 
 // Run bower install
