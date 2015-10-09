@@ -1,0 +1,9 @@
+.side-menu {
+  ul {
+    li {
+      >ul {
+        padding-left: 15px;
+      }
+    }
+  }
+}

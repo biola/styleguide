@@ -1,0 +1,13 @@
+.faculty-profile {
+  padding:1.5em 0 2em;
+  ul { padding-left:1.2em; }
+  .profile-titles { list-style:none; padding-left:0; font-weight:bold; font-size:1.1em; color:#333; }
+  .profile-titles > li { margin:0 0 5px; }
+  .profile-photo { width:100px; height:100px; float:right; margin:0 0 20px 20px; background-color:#CCC; border-radius:50%; background-size:cover; }
+}
+
+@media (min-width:$screen-sm-min) {
+  .faculty-profile {
+    .profile-photo { width:100%; height:0; padding-top:100%; float:none; margin:0; }
+  }
+}

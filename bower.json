@@ -21,8 +21,10 @@
     "node_modules"
   ],
   "dependencies": {
-    "bootstrap": "~> 3.3.5",
     "jquery": ">= 1.9.1",
-    "owl.carousel": ">= 2.0.0-beta.3"
+    "magnific-popup": "~1.0.0",
+    "owl.carousel": ">= 2.0.0-beta.3",
+    "bootstrap-sass": "~3.3.5",
+    "font-awesome-sass": "~4.4.0"
   }
 }

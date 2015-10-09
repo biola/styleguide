@@ -1,0 +1,18 @@
+.sg-header {
+  margin:0;
+  padding:0.5em 0;
+  color:rgba(0,0,0,0.6);
+  background:#D9E3EA;
+  text-align:center;
+  font-weight:normal;
+}
+.sg-label {
+  color:#7595AB;
+  font-weight:bold;
+  &:before {
+    content:'\02794';
+    float:left;
+    width:25px;
+    margin:0 0 0 -25px;
+  }
+}

@@ -1,0 +1,139 @@
+//===============================================
+// Bordered List
+//===============================================
+.list-bordered {
+  padding-left:0;
+  list-style:none;
+  > li {
+    display:block;
+    padding-top:10px;
+    padding-bottom:10px;
+    position:relative;
+    border-top:1px solid $border-color;
+    &:first-child {
+      border-top-width:0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top:0;
+    }
+  }
+  ul {
+    list-style:disc;
+  }
+}
+// Reduce top and bottom padding when list is in a panel
+.panel .list-bordered {
+  margin-bottom:0;
+  > li:first-child {
+    padding-top:0;
+  }
+  > li:last-child {
+    padding-bottom:0;
+  }
+}
+// Adjust border color when in a dark segment
+.segment-dark .list-bordered {
+  > li {
+    border-color:lighten($color-bg-dark, 20);
+  }
+}
+.segment-bold .list-bordered {
+  > li {
+    border-color:lighten($color-biola-red, 25);
+  }
+}
+
+//===============================================
+// List columns
+//===============================================
+@mixin make-list-columns($class, $list:null) {
+  @each $i in 2, 3, 4, 6 {
+    $list: append($list, unquote(".list-col-#{$class}-#{$i}"), comma);
+
+    .list-col-#{$class}-#{$i} {
+      @include content-columns($grid-columns/$i);
+    }
+  }
+  #{$list} {
+    &.list-bordered {
+      > li:first-child {
+        border-top-width:1px;
+      }
+    }
+    > li {
+      -webkit-column-break-inside: avoid; // Chrome, Safari, Opera
+                page-break-inside: avoid; // Firefox
+                     break-inside: avoid; // IE 10+
+    }
+  }
+}
+
+@media (min-width:$screen-sm-min) {
+  @include make-list-columns(sm);
+}
+@media (min-width:$screen-md-min) {
+  @include make-list-columns(md);
+}
+@media (min-width:$screen-lg-min) {
+  @include make-list-columns(lg);
+}
+
+
+//===============================================
+// Button Lists
+//===============================================
+.list-btn,
+.list-btn-horizontal {
+  @include list-unstyled;
+  > li {
+    margin-bottom:5px;
+  }
+}
+.list-btn-horizontal {
+  @include clearfix;
+  > li {
+    float:left;
+    margin-right:5px;
+    &:last-child {
+      margin-right:0;
+    }
+  }
+}
+//===============================================
+// Toggle Lists
+//===============================================
+.toggle-list {
+  padding-left:0;
+  list-style:none;
+  .toggle-item {
+    border-top:1px solid $border-color;
+    &:first-child {
+      border-top:0;
+    }
+  }
+  .toggle-item-head {
+    margin:$line-height-computed 0;
+    a:before {
+      @include fa-icon;
+      content:$fa-var-plus-circle;
+      font-size:0.85em;
+      padding-right:10px;
+    }
+  }
+  .active > .toggle-item-head {
+    a:before {
+      content:$fa-var-minus-circle;
+    }
+  }
+  .toggle-item-body {
+    height:0;
+    opacity:0;
+    overflow:hidden;
+    @include transition(opacity 300ms ease);
+  }
+  .active > .toggle-item-body {
+    height:auto;
+    opacity:1;
+    padding-bottom:10px;
+  }
+}

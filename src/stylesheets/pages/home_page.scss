@@ -1,0 +1,134 @@
+@import "variables";
+@import "mixins";
+@import "components/media";
+
+body.home_page {
+  // Home alert
+  .home-alert {
+    padding:15px 0;
+    &.alert-notice {
+      background-color:$state-warning-bg;
+      h2 {
+        font-size:20px;
+      }
+    }
+    &.alert-emergency {
+      background-color:$state-danger-bg;
+      h2 {
+        font-size:28px;
+        color:$state-danger-text;
+      }
+    }
+  }
+
+  // Home carousel
+  .home-carousel {
+    .segment-graphic {
+      padding-top:40%;
+    }
+    .slide-body {
+      padding:20px 0;
+      h2 {
+        font-weight:normal;
+        font-size:26px;
+        margin-top:4px;
+      }
+    }
+    .slide-link {
+      padding-top:10px;
+    }
+    @media (min-width:$screen-sm-min) {
+      .slide-body,
+      .slide-lead {
+        overflow:hidden;
+      }
+      .slide-body {
+        padding-left:20px;
+        padding-right:20px;
+        background:#000;
+      }
+      .slide-lead {
+        width:10000px;
+      }
+      .slide-lead,
+      .slide-link {
+        display:table-cell;
+        vertical-align:middle;
+      }
+      .slide-link {
+        padding-top:0;
+        padding-left:40px;
+      }
+    }
+  }
+
+  // Explore Biola features
+  .explore-feature {
+    padding:0 0 15px;
+    h3 {
+      margin-top:20px;
+    }
+  }
+
+  // News
+  .lead-article {
+    @media (max-width:480px) {
+      @include reset-media-object;
+    }
+  }
+
+  // Campaign promo
+  .campaign-promo {
+    padding-top:0;
+    padding-bottom:0;
+    text-align:center;
+    .container {
+      padding-top:40px;
+      padding-bottom:250px;
+      background-repeat:no-repeat;
+      background-position:center bottom;
+    }
+    @media (min-width:$screen-sm-min) {
+      text-align:left;
+    }
+    @media (min-width:$screen-md-min) {
+      .container {
+        padding-bottom:50px;
+        background-position:right bottom;
+      }
+    }
+  }
+  .campaign-tagline {
+    font-family:$minion-pro;
+    font-style:italic;
+    font-size:36px;
+    strong {
+      font-style:normal;
+      color:$color-biola-red;
+    }
+  }
+  .campaign-logo {
+    margin-top:0;
+    margin-bottom:30px;
+    text-align:center;
+    img {
+      padding:0;
+      width:180px;
+    }
+    @media (min-width:$screen-sm-min) {
+      margin-bottom:0;
+      img {
+        width:220px;
+      }
+    }
+  }
+
+  // Home footer
+  .footer-home {
+    background-color:#3F3333;
+    font-size:14px;
+    a {
+      color:#AAA;
+    }
+  }
+}

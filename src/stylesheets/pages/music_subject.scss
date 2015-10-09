@@ -1,0 +1,103 @@
+@import "bourbon";
+@import "variables";
+@import "mixins";
+
+.expanding-about-section {
+  background-color: #262626;
+  color: white;
+  p, ul, ol, li { color: #ccc; }
+  p {
+    &.feature { font-size: 1.2em; font-weight: 300; }
+  }
+
+  .btn.btn-expand {
+    color: #ccc;
+    background-color: transparent;
+    border-color: #555;
+    font-weight: 200;
+
+    .fa { padding: 0 5px 0 2px; }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.03)
+    }
+  }
+  .expanded-section { display: none; }
+
+  &.expanded {
+    .expanded-section { display: block; }
+    .btn-expand { display: none; }
+  }
+
+  @media screen and (min-width:768px) {
+    // Add background image on larger screens
+    background-image: image-url('music/about-conservatory.jpg');
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position:right top;
+
+    .expanded-section {
+      // Add background image on larger screens
+      background-image: image-url('music/crowell-hall.jpg');
+      background-size: 55%;
+      background-repeat: no-repeat;
+      background-position: bottom left;
+
+      padding-top: 3em;
+    }
+  }
+  @media screen and (min-width:1140px) {
+    background-size:600px;
+    background-position:right -150px;
+  }
+}
+
+//====================================
+// Image Box List
+//   -- currently being used on the music landing site to promote the Areas of Study.
+//====================================
+.imagebox-list {
+  // Subtract the margin on the left and right side of the left and right most items
+  // margin: 0 -10px;
+
+  .item {
+    height: 150px; //width: 300px;
+    margin-bottom: 15px;
+
+    // Background url gets set in html
+    background-size: cover; background-position: center center;
+
+    a {
+      height: 100%; //width: 100%;
+      background-color: rgba(0,0,0,.5);
+      color: white; text-align: center; font-size: 24px; font-family: 'proxima-nova',Helvetica,Arial,sans-serif;
+      text-decoration: none;
+      @include transition(background-color 0.5s);
+
+      &:hover {
+        background-color: rgba(0,0,0,.8);
+      }
+
+      // Center Vertical align
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(center);
+      span { text-align: center; max-width: 90%; }
+    }
+  }
+}
+
+//====================================
+// Music Emphasis page
+//====================================
+.degree-program-list {
+  border-top:1px solid $border-color;
+
+  ul {
+    margin-top:5px;
+    margin-bottom:5px;
+  }
+  .degree-title {
+    font-size:16px;
+  }
+}

@@ -1,0 +1,9 @@
+// This can get reused around the site
+.search_form { background-color: #ddd; @extend .shadow; margin-bottom: 20px; padding: 30px;
+  .search_description { font-size: 20px; margin-bottom: 20px; }
+  .search_input { position: relative; margin-bottom: 20px; background-color: white; @extend .shadow;
+    input { width: 100%; border: none; outline: none; padding: 5px 10px; font-size: 14px; background: none; border: 1px solid #ccc;
+      -webkit-appearance: none; border-radius: 3px; // For iOS
+    }
+  }
+}

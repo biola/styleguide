@@ -18,3 +18,12 @@ NOTE: I'm still trying to figure out the best way to get the dependent assets li
     gulp
 
 The server should start at [http://localhost:8080](http://localhost:8080) by default. As long as gulp is running, it will automatically watch for changes in the `src` folder and recompile the changes into the `dist` folder.
+
+
+## Gulp
+
+To install new dev packages
+
+    npm install gulp-something --save-dev
+
+This will add the dependency to the devDependencies section in package.json.

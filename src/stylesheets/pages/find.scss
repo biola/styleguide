@@ -1,0 +1,76 @@
+@import "variables";
+@import "mixins";
+
+div.gsc-control-cse {
+  padding:20px 0;
+  border:0;
+
+  .table > thead > tr > th, table > thead > tr > th,
+  .table > thead > tr > td, table > thead > tr > td,
+  .table > tbody > tr > th, table > tbody > tr > th,
+  .table > tbody > tr > td, table > tbody > tr > td,
+  .table > tfoot > tr > th, table > tfoot > tr > th,
+  .table > tfoot > tr > td, table > tfoot > tr > td {
+    border:0;
+  }
+  .gsc-result-info-container,
+  .gsc-result-info {
+    padding:0;
+  }
+  .gcsc-branding {
+    padding:0;
+  }
+  .gsc-table-result {
+    font-size:14px;
+  }
+  .gsc-results {
+    width:100%;
+  }
+  .gsc-result {
+    padding:10px 0;
+    .gs-title {
+      height:auto;
+      padding-bottom:1px;
+    }
+    .gs-title,
+    .gs-title * {
+      color:$link-color;
+      text-decoration:none;
+      font-size:17px;
+    }
+    .gs-title a:hover {
+      text-decoration:underline;
+    }
+  }
+  .gsc-above-wrapper-area-container {
+    margin:0;
+  }
+  .gsc-thumbnail-inside,
+  .gsc-url-top {
+    padding-left:0;
+  }
+  .gsc-resultsHeader,
+  .gsc-table-result {
+    margin-bottom:0;
+  }
+  .gsc-table-cell-snippet-close {
+    padding-top:0;
+  }
+
+  // Pagination
+  .gsc-cursor-box {
+    margin:30px 0 0;
+    .gsc-cursor-page {
+      display:inline-block;
+      padding:10px 0;
+      width:36px;
+      text-align:center;
+      background-color:#EEE;
+      border-radius:4px;
+    }
+    .gsc-cursor-current-page {
+      background-color:#666;
+      color:#FFF;
+    }
+  }
+}

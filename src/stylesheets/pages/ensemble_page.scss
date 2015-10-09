@@ -1,0 +1,64 @@
+@import "variables";
+#ensemble-show {
+  font-family: $proxima-nova;
+
+  .section { margin-top: 30px; margin-bottom: 30px; }
+
+  .ensemble-banner {
+    margin: 40px 0;
+  }
+  .conductor {
+    .image {
+      height: 100px;
+      width: 100px;
+      border-radius: 100px;
+      overflow: hidden;
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+    .title {
+      padding: 15px 0 5px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .name {
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+  .features {
+    font-size: 18px;
+  }
+
+  .media-box {
+    background: #aaa;
+    min-height: 100px;
+    padding-top: 100px;
+    margin-bottom: 20px;
+
+    .description {
+      background-color: rgba(0,0,0,.5);
+      color: white;
+      padding: 20px;
+      margin-bottom: 10px;
+
+      .title {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+#list-of-ensembles {
+  font-family: $proxima-nova;
+
+  .ensemble-thumbnail {
+    height: 195px;
+    background-color: #ccc;
+    background-position: center center;
+    background-size: cover;
+  }
+  .ensemble-title {
+    font-weight: bold; font-size: 20px; margin: 10px 0; }
+}

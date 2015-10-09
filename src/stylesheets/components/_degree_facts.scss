@@ -1,0 +1,35 @@
+//===============================================
+// Degree Facts
+//
+// This is the "Program At A Glace" panel
+// on the Degree Program  page
+//===============================================
+.degree-facts {
+  .degree-facts-list {
+    color:#666;
+    h4 {
+      margin:5px 0 0;
+      font-size:$font-size-base;
+    }
+    .degree-fact {
+      font-size:22px;
+      color:$text-color;
+    }
+    ul {
+      list-style:none;
+      margin:5px 0;
+      padding:0;
+    }
+  }
+  .degree-actions {
+    @include list-unstyled;
+    margin:0 -5px;
+    padding:15px 0 0;
+    li {
+      margin:5px 0 0;
+      padding:0 5px;
+      float:left;
+      width:50%;
+    }
+  }
+}

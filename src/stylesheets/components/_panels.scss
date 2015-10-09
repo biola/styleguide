@@ -1,0 +1,8 @@
+.panel-transparent {
+  background-color:transparent;
+  @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+}
+
+.segment-dark .panel-transparent {
+  @include panel-variant(#555, #DDD, #333, #555);
+}

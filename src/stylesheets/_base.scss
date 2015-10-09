@@ -1,0 +1,235 @@
+body {
+  background-color:$color-bg-dark;
+}
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top:($line-height-computed * 0.75); // Override bootstrap default
+  margin-bottom:($line-height-computed * 0.75);
+}
+//h1, .h1,
+//h2, .h2,
+//h3, .h3,
+//h4, .h4,
+//h5, .h5,
+//h6, .h6 {
+//  p + &,
+//  ul + &,
+//  ol + &,
+//  table + & {
+//    margin-top:1.5em;
+//  }
+//}
+p, ul, ol, dl {
+  margin-bottom:($line-height-computed * 0.75);
+}
+img {
+  @include img-responsive(inline-block); // Make images responsive by default
+}
+table {
+  @extend .table; // Use bootstrap styling by default
+}
+blockquote {
+  footer {
+    font-size:$font-size-base;
+  }
+}
+
+.wrapper-site {
+  background-color:#FFF;
+}
+
+.reset-box-sizing {
+  &,
+  *,
+  *:before,
+  *:after {
+    @include box-sizing(content-box);
+  }
+}
+
+//===============================================
+// Buttons & Links
+//===============================================
+.btn-action {
+  @include button-variant(#FFF, $color-biola-red, darken($color-biola-red, 5));
+}
+.btn-dark {
+  @include button-variant(#DDD, $color-bg-dark, darken($color-bg-dark, 5));
+}
+.btn-gray {
+  @include button-variant(#EEE, #666, darken(#666, 5));
+}
+// Seems kinda hackish, but this increases the specificity of a .btn inside .segment-dark
+// so that it's own text color won't be overridden by the .segment-dark link color
+@each $button in default, primary, success, info, warning, danger, action, dark, gray {
+  .segment-dark .btn-#{$button},
+  .segment-bold .btn-#{$button} {
+    @extend .btn-#{$button};
+  }
+}
+
+.more-link {
+  font-weight:bold;
+  &:after {
+    @include fa-icon;
+    content:$fa-var-angle-right;
+    font-weight:inherit;
+    padding:0 0 0 5px;
+    &:hover {
+      text-decoration:none;
+    }
+  }
+}
+.file-link {
+  margin-bottom: 5px;
+  &:before {
+    @include fa-icon;
+    content:$fa-var-file-text;
+    font-weight:inherit;
+    padding:0 10px 0 5px;
+  }
+}
+.external-link { 
+  margin-bottom: 5px;
+  &:after {
+    @include fa-icon;
+    content:$fa-var-external-link;
+    font-weight:inherit;
+    padding:0 5px 0 10px;
+  }
+}
+.nav-top {
+  margin:$line-height-computed 0;
+  text-align:center;
+  a:before {
+    @include fa-icon;
+    content:$fa-var-chevron-up;
+    padding-right:5px;
+  }
+}
+
+//===============================================
+// Images
+//===============================================
+.img-caption {
+  background-color:#CCC;
+  padding:15px;
+  display:block;
+}
+
+//===============================================
+// Headings and Leads
+//===============================================
+.page-title {
+  font-weight:normal;
+  margin-top:($line-height-computed * 0.5);
+}
+.lead {
+  font-size: floor(($font-size-base * 1.25));
+  // bootstrap overrides:
+  margin-bottom:($line-height-computed * 0.75);
+  font-weight:normal;
+  line-height:$line-height-base;
+}
+.lead-lg {
+  margin-bottom: $line-height-computed;
+  font-size: floor(($font-size-base * 1.5));
+}
+
+//===============================================
+// Text Utilities
+//===============================================
+.text-regular {
+  font-weight:400;
+}
+.text-bold {
+  font-weight:700;
+}
+.text-light {
+  font-weight:300;
+}
+// Generic text sizing
+// Can be applied to p, ul, h1..h6, etc.
+.text-38 { font-size:38px; }
+.text-36 { font-size:36px; }
+.text-34 { font-size:34px; }
+.text-32 { font-size:32px; }
+.text-30 { font-size:30px; }
+.text-28 { font-size:28px; }
+.text-26 { font-size:26px; }
+.text-24 { font-size:24px; }
+.text-22 { font-size:22px; }
+.text-20 { font-size:20px; }
+.text-18 { font-size:18px; }
+.text-16 { font-size:16px; }
+.text-15 { font-size:15px; }
+.text-14 { font-size:14px; }
+.text-13 { font-size:13px; }
+.text-12 { font-size:12px; }
+
+
+// .page-segment { padding: 2em 0; }
+// .page-segment p { font-size: 1.1em; }
+// .page-segment .feature-text {
+//   color: $color-font-light;
+//   background-color: $color-bg-dark;
+//   padding: 1em;
+//   box-shadow: .5em 0 0 $color-bg-dark,-0.5em 0 0 $color-bg-dark;
+//   font-size: 1.4em;
+//   line-height: 1.5em;
+// }
+// .page-segment .feature-text p.last { margin-bottom: 0; }
+// .page-segment.border-top { border-top: 1px solid #ededed; }
+// .page-segment.segment-dark { background-color: $color-bg-dark; color: $color-font-light; }
+// .page-segment.segment-light { background-color: $color-bg-light; }
+//
+// .heading-segment { text-align: center; font-weight: normal; margin: 0; padding: 0; }
+// h2.heading-segment, h3.heading-segment { line-height: 1.3; }
+//
+// .segment-dark .img-bg-half-left, .segment-dark .img-bg-half-right, .segment-dark .img-bg-wide-right { border-color: $color-bg-dark; }
+// .segment-light .img-bg-half-left, .segment-light .img-bg-half-right, .segment-dark .img-bg-wide-right { border-color: $color-bg-light; }
+// .segment-footer { background-color:#e5e5e5; border-top: 1px solid #ccc; }
+// .segment-banner { height:300px; background-color: $color-bg-light; background-size:cover; background-position:center top; }
+//
+// .container-segment, .page-segment .container { position: relative; }
+// .img-bg { width: 100%; height: 160px; margin-bottom: 2.5em; background-repeat: no-repeat; background-size: cover; }
+// .img-bg-half-left, .img-bg-half-right { background-position: center center; }
+//
+// .file-link { margin-bottom: 5px; }
+// .file-link a::before { content:"\F15c"; font-family:'FontAwesome'; font-size:1em; margin-right:10px; padding-left:2px; }
+//
+// .section-filter {
+//   border-bottom:1px solid #CCC; padding-bottom:1em; margin-bottom:2em;
+//   .dropdown-label,
+//   .dropdown-toggle { font-size:1.1em; }
+// }
+//
+// @media (min-width:$screen-sm-min) {
+//   .segment-banner { height:350px; }
+//   .container-segment { padding-top: 2.5em; padding-left: 15px; padding-right: 15px; }
+//   .img-bg { position: absolute; top: 0; bottom: 0; height: auto; max-width: 700px; margin-bottom: 0; }
+//   .img-bg-half-left, .img-bg-half-right, .img-bg-wide-right { width: 50%; }
+//   .img-bg-half-left { right: 50%; border-right: 15px solid white; }
+//   .img-bg-half-right, .img-bg-wide-right { left: 50%; border-left: 15px solid white; }
+//
+// }
+//
+// @media (min-width:$screen-md-min) {
+//   // .page-segment { padding:3em 0; }
+//   .page-segment { padding: 0; }
+//   .segment-banner { height:400px; }
+//   .container-segment, .page-segment>.container { padding-top: 3em; padding-bottom: 3em; }
+//   .img-bg-half-left, .img-bg-half-right { max-width: 905px; }
+//
+// }
+//
+// @media (min-width:$screen-lg-min) {
+//   // .page-segment { padding:3.5em 0; }
+//   .page-segment { padding: 0; }
+//   .segment-banner { height:500px; }
+//   .container-segment, .page-segment>.container { padding-top: 4em; padding-bottom: 4em; }
+// }

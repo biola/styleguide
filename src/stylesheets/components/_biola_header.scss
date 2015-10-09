@@ -1,0 +1,393 @@
+// Dimensions
+$bnav-logo-height-sm:40px; // mobile
+$bnav-logo-height-lg:46px; // desktop
+$bnav-top-bar-height:42px;
+
+// Mixins
+@mixin bnav-text-height($height) {
+  padding-top:0;
+  padding-bottom:0;
+  line-height:$height; // vertically center text
+  height:$height;
+}
+
+//===============================================
+// Biola nav headers
+//===============================================
+.bnav {
+  @include clearfix;
+  padding:15px 0;
+  position:relative;
+  a {
+    color:inherit;
+    text-decoration:none;
+
+    &:hover,
+    &:hover img {
+      @include opacity(0.5);
+    }
+    &:active,
+    &:active img {
+      @include opacity(1);
+    }
+  }
+  @media (max-width:$grid-float-breakpoint-max) {
+    .container .container {
+      padding-left:0;
+      padding-right:0;
+      margin-left:0;
+      margin-right:0;
+      width:auto;
+    }
+  }
+}
+.bnav-logo {
+  margin:0 40px 0 0;
+  float:left;
+  img {
+    display:block;
+    height:$bnav-logo-height-sm;
+
+    @media (min-width:$grid-float-breakpoint) {
+      height:$bnav-logo-height-lg;
+    }
+  }
+}
+.bnav-buttons {
+  float:right;
+  list-style:none;
+  margin:0;
+  padding:0;
+
+  li {
+    float:right;
+    width:25px;
+    font-size:26px;
+    margin-left:20px;
+    text-align:center;
+  }
+  a {
+    display:block;
+    @include bnav-text-height($bnav-logo-height-sm);
+  }
+}
+.bnav-heading {
+  margin:0;
+  font-size:20px;
+  font-weight:bold;
+  @include bnav-text-height($bnav-logo-height-sm);
+  @include text-overflow();
+
+  @media (min-width:$grid-float-breakpoint) {
+    float:left;
+  }
+}
+.bnav-btn-menu {
+  .fa {
+    @extend .fa-navicon;
+  }
+  [aria-expanded='true'] .fa {
+    @extend .fa-close;
+    font-size:20px; // reduce size -- normal size is a bit large
+  }
+  @media (min-width:$grid-float-breakpoint) {
+    display:none;
+  }
+}
+
+//===============================================
+// Search Dropdown
+//===============================================
+.bnav-search-dropdown {
+  left:auto; // Reset the default from `.dropdown-menu`
+  right:0;
+
+  @media (min-width:$screen-sm-min) {
+    min-width:360px;
+  }
+  form {
+    padding:0 5px;
+  }
+  .form-control, .btn {
+    height:42px;
+    font-size:16px;
+    border-radius:0;
+  }
+  .form-control {
+    z-index:3; // position above button so right border is blue when focused
+  }
+}
+.dropdown.bnav-btn-search {
+  @media (max-width:$screen-xs-max) {
+    // position .dropdown-menu relative to navbar
+    // instead of .dropdown
+    position:static;
+
+    .bnav-search-dropdown {
+      top:85%;
+      left:10px;
+      right:10px;
+    }
+  }
+}
+
+//===============================================
+// Mobile Collapse Menu
+//===============================================
+.bnav-collapse {
+  clear:both;
+  background-color:inherit;
+  border-color:inherit;
+  border-top-width:0;
+  border-top-style:solid;
+
+  @media (min-width:$grid-float-breakpoint) {
+    & {
+      clear:none;
+    }
+    // Always show on desktop:
+    &.collapse {
+      display:block;
+      height:auto !important;
+    }
+  }
+}
+
+//===============================================
+// Nav Menu Sections and Labels
+//===============================================
+.bnav-menu-section {
+  @media (max-width:$grid-float-breakpoint-max) {
+    padding:20px 0 0;
+  }
+}
+.bnav-menu-label {
+  font-weight:bold;
+  font-size:14px;
+  margin:0 0 10px;
+
+  @media (min-width:$grid-float-breakpoint) {
+    & {
+      display:none;
+    }
+  }
+}
+
+//===============================================
+// Nav Menus
+//===============================================
+.bnav-menu {
+  &, ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  ul, li {
+    border-color:inherit;
+  }
+  a, .dropdown-menu a {
+    display:block;
+    padding-left:0;
+    padding-right:0;
+
+    &:hover,
+    &:focus {
+      background:transparent; // override bootstrap default
+    }
+  }
+  @media (max-width:$grid-float-breakpoint-max) {
+    ul {
+      padding-left:15px; // Indent sub-menus
+      padding-bottom:15px;
+    }
+    li {
+      border-top-width:1px;
+      border-top-style:solid;
+    }
+    a, .dropdown-menu a {
+      @include bnav-text-height(44px);
+    }
+    a.current,
+    a.ancestor { font-weight:bold; }
+  }
+  @media (min-width:$grid-float-breakpoint) {
+    & > li {
+      float:left;
+      margin-left:1.5em;
+      position:relative;
+    }
+    & > li:first-child {
+      margin-left:0;
+    }
+    & > li > a.current:after,
+    & > li > a.ancestor:after {
+      content:' ';
+      position:absolute;
+      width:100%;
+      height:0;
+      left:0;
+      bottom:6px;
+      border-bottom-width:2px;
+      border-bottom-style:solid;
+    }
+    // Right Menus
+    &.bnav-menu-right {
+      float:right;
+    }
+  }
+}
+a.bnav-menu-toggle {
+  float:right;
+  position:relative;
+  z-index:1;
+  width:25px;
+  text-align:center;
+  cursor:pointer;
+  font-size:18px;
+
+  .fa {
+    @extend .fa-chevron-down;
+  }
+  &[aria-expanded='true'] .fa {
+    @extend .fa-chevron-up;
+  }
+  @media (min-width:$grid-float-breakpoint) {
+    display:none; // Hide on desktop
+  }
+}
+
+//===============================================
+// Nav Dropdowns
+//===============================================
+.bnav-menu {
+  // Remove default Bootstrap dropdown menu styling:
+  .dropdown-menu {
+    position:relative; // need this or dropdowns won't work on mobile
+    float:none;
+    width:auto;
+    border-width:0;
+    background-color:transparent;
+    box-shadow:none;
+
+    a, a:hover, a:focus {
+      color:inherit;
+    }
+  }
+}
+@media (min-width:$grid-float-breakpoint) {
+  .bnav-menu {
+    .dropdown-menu {
+      // top, left, z-index, min-width, etc defined in Bootstrap
+      position:absolute;
+      margin:0;
+      padding:5px 0;
+      font-size:14px;
+      background-color:$dropdown-bg;
+      border-width:1px;
+      border-radius:$border-radius-base;
+      border:1px solid $dropdown-fallback-border; // IE8 fallback
+      border:1px solid $dropdown-border;
+      @include box-shadow(0 6px 12px rgba(0,0,0,.175));
+
+      a {
+        padding:10px 15px;
+        color:#333;
+      }
+      a:hover {
+        color:#000;
+        background-color:#DDD;
+        @include opacity(1);
+      }
+      a.current {
+        background-color:#DDD;
+      }
+    }
+  }
+  // Enable hover dropdowns on desktop
+  .bnav-dd-hover:hover .dropdown-menu {
+    display:block;
+  }
+  // Right align dropdowns in right menus
+  .bnav-menu-right .dropdown-menu {
+    left:auto;
+    right:0;
+  }
+}
+
+
+//===============================================
+// Nav Variations
+//===============================================
+// Global Nav Header
+.biola-nav-global {
+  color:#FFF;
+  background:$color-biola-red;
+
+  @media (min-width:$grid-float-breakpoint) {
+    padding-top:20px + $bnav-top-bar-height; // offset for top bar
+    padding-bottom:20px;
+
+    .bnav-buttons a {
+      @include bnav-text-height($bnav-logo-height-lg);
+    }
+  }
+  .bnav-menu {
+    border-color:darken($color-biola-red, 10);
+  }
+  .bnav-group-primary {
+    .bnav-menu {
+      & > li > a { // don't target dropdowns
+        text-transform:uppercase;
+        font-size:16px;
+        font-family:$proxima-nova;
+        letter-spacing:1px;
+
+        @media (min-width:$grid-float-breakpoint) {
+          padding-top:0;
+          padding-bottom:0;
+          height:$bnav-logo-height-lg;
+          line-height:$bnav-logo-height-lg;
+        }
+      }
+    }
+  }
+  .bnav-group-secondary {
+    @media (min-width:$grid-float-breakpoint) {
+      // Create top bar
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      padding:0 15px;
+      background:darken($color-biola-red, 15);
+
+      .bnav-menu {
+        & > li > a { // don't target dropdowns
+          padding-top:0;
+          padding-bottom:0;
+          height:$bnav-top-bar-height;
+          line-height:$bnav-top-bar-height;
+          color:lighten($color-biola-red, 45);
+        }
+      }
+    }
+  }
+}
+
+// Local Nav Header
+.biola-nav-local {
+  background:#FFF;
+  z-index:1; // position above following content for box-shadow
+  @include box-shadow(0 1px 1px rgba(0,0,0,0.3));
+
+  .bnav-menu {
+    border-color:$border-color;
+
+    @media (min-width:$grid-float-breakpoint) {
+      & > li > a { // don't target dropdowns
+        font-size:16px;
+        @include bnav-text-height($bnav-logo-height-sm);
+      }
+    }
+  }
+}

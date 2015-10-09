@@ -1,0 +1,46 @@
+//===============================================
+// Media box
+//
+// These are the media boxes for watch
+// and listen.
+//===============================================
+.media-carousel {
+  margin: 0 -10px;
+  .slide {
+    margin: 0 10px;
+    .media {
+      display: block;
+      margin-bottom: 15px;
+      height: 150px;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+
+      .text {
+        background-color: rgba(0,0,0,.5);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 15px;
+
+        .title {
+          font-size: 1.1em;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        .subtitle {
+          font-size: 0.9em;
+        }
+      }
+
+      @media(min-width: $screen-sm-min) {
+        height: 300px;
+      }
+    }
+  }
+}

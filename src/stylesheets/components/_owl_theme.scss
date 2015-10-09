@@ -1,0 +1,104 @@
+$owl-controls-height:44px;
+$owl-pager-size:12px;
+
+// Default theme (based on Owl Carousel default theme)
+.owl-theme .owl-controls {
+  background-color:transparent;
+  text-align:center;
+
+  // Styling Next and Prev buttons
+  .owl-buttons {
+    position:relative;
+    height:0;
+    top:$owl-controls-height * -1;
+  }
+  .owl-buttons div {
+    @include fa-icon;
+    position:absolute;
+    top:0;
+    color:#999;
+    margin:0;
+    padding:0;
+    font-size:20px;
+    height:$owl-controls-height;
+    line-height:$owl-controls-height + 1px;
+    @include opacity(1);
+
+    &.owl-prev {
+      left:0;
+      @extend .fa-chevron-left;
+    }
+    &.owl-next {
+      right:0;
+      @extend .fa-chevron-right;
+    }
+  }
+  // Clickable class fix problem with hover on touch devices
+  // Use it for non-touch hover action
+  &.clickable .owl-buttons div:hover {
+    text-decoration:none;
+    @include opacity(0.5);
+  }
+  // Styling Pagination
+  .owl-pagination {
+    line-height:0;
+  }
+  .owl-page {
+    display:inline-block;
+    padding:($owl-controls-height - $owl-pager-size)/2 7px;
+  }
+  .owl-page span {
+    display:inline-block;
+    width:$owl-pager-size;
+    height:$owl-pager-size;
+    border-radius:$owl-pager-size;
+    background:#999;
+    @include opacity(0.5);
+  }
+  .owl-page.active span,
+  &.clickable .owl-page:hover span {
+    @include opacity(1);
+  }
+
+  // If PaginationNumbers is true
+  .owl-page span.owl-numbers {
+    height:auto;
+    width:auto;
+    color:#FFF;
+    padding:2px 10px;
+    font-size:12px;
+    border-radius:30px;
+  }
+}
+
+// Full width -- carousel isn't in a .container
+.owl-theme-full .owl-controls {
+  .owl-buttons {
+    @extend .container;
+  }
+  .owl-buttons div {
+    &.owl-prev {
+      padding-left:$grid-gutter-width/2;
+    }
+    &.owl-next {
+      padding-right:$grid-gutter-width/2;
+    }
+  }
+}
+
+// Dark theme
+.owl-theme-dark .owl-controls {
+  background-color:#444;
+  .owl-buttons div {
+    color:#AAA;
+  }
+  .owl-page span {
+    background:#AAA;
+  }
+}
+
+// preloading images
+//.owl-item.loading{
+//  min-height:150px;
+//  background:url(AjaxLoader.gif) no-repeat center center
+//}

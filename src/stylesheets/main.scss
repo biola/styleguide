@@ -1,8 +1,26 @@
-// Mixins, settings and utilities
-@import "./settings";
-@import "./mixins";
-@import "./utilities";
+//===============================================
+// Mixins and variables
+//===============================================
+// This section should be first so we can
+// override settings from libs below
+@import "variables";
+@import "mixins";
 
-body {
-  p { }
-}
+//===============================================
+// Libs
+//===============================================
+// @import "font-awesome";
+@import "bower_components/font-awesome-sass/assets/stylesheets/font-awesome";
+@import "bower_components/owl.carousel/dist/assets/owl.carousel";
+@import "bower_components/magnific-popup/dist/magnific-popup";
+//@import "biola-frontend-toolkit";
+@import "bootstrap";
+
+//===============================================
+// Application files
+//===============================================
+@import "base";
+@import "styleguide";
+@import "components";
+//@import "shared/*";
+//@import "resources/*";

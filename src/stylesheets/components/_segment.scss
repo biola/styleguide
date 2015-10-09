@@ -1,0 +1,78 @@
+.page-segment {
+  padding:40px 0;
+}
+.segment-tint { // .page-segment modifier
+  background-color:$color-bg-light;
+}
+.segment-dark { // .page-segment modifier
+  background-color:$color-bg-dark;
+  color:#DDD;
+  a {
+    color:$link-color-light;
+    &:hover,
+    &:focus {
+      color:$link-hover-color-light;
+    }
+  }
+}
+.segment-bold {
+  background-color:$color-biola-red;
+  color:#DDD;
+  a {
+    color:#FFF;
+    text-decoration:underline;
+    &:hover,
+    &:focus {
+      text-decoration:none;
+    }
+  }
+}
+.segment-flush { // .page-segment modifier
+  padding-top:0;
+  padding-bottom:0;
+}
+
+.segment-graphic {
+  width:100%;
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+
+  @media (max-width:$screen-xs-max) {
+    // Make graphic flush to edge:
+    @include box-sizing(content-box);
+    margin-left:$grid-gutter-width/-2;
+    margin-right:$grid-gutter-width/-2;
+    padding-left:$grid-gutter-width/2;
+    padding-right:$grid-gutter-width/2;
+  }
+
+  &.graphic-full { padding-top:40%; }    // ~5/2
+  &.graphic-half { padding-top:66.67%; } // ~9/6
+
+  @media (min-width:$screen-sm-min) {
+    &.graphic-full,
+    &.graphic-half {
+      padding-top:0;
+      height:290px;
+    }
+  }
+  @media (min-width:$screen-md-min) {
+    &.graphic-full,
+    &.graphic-half {
+      height:375px;
+    }
+  }
+  @media (min-width:$screen-md-min) {
+    &.graphic-full,
+    &.graphic-half {
+      height:450px;
+    }
+  }
+}
+
+// For use with .segment-flush and .segment-graphic
+.segment-body {
+  padding-top:40px;
+  padding-bottom:40px;
+}

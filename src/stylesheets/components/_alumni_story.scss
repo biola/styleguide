@@ -1,0 +1,90 @@
+.alumni-story {
+  .profile-photo { margin-bottom:30px; }
+
+  .page-segment:first-child {
+    color: white;
+    -webkit-font-smoothing: antialiased; // Makes font thinner
+    .page-title { margin-bottom: 30px; font-weight: normal; }
+    .subtitle { margin-bottom: 30px; }
+    p {
+      // color: #aaa;
+      font-size: 18px;
+      font-weight: 200;
+      letter-spacing: 0.5px;
+
+      &.blurb { }
+      &.quote {
+        font-family: 'minion-pro', Georgia, serif;
+        font-size: 22px;
+        font-style: italic;
+        margin-top: 20px;
+        padding-left: 45px;
+        position: relative;
+        margin-bottom: 12px;
+        &:before {
+          content: "“";
+          font-size: 4em;
+          position: absolute;
+          left: -10px;
+          top: -26px;
+        }
+        &:after { content: "”"; }
+      }
+      &.cite {
+        font-size: 14px;
+        font-weight: 300;
+        padding-left: 45px;
+        &:before { content: "— "; }
+      }
+    }
+    .image-column {
+      text-align: center;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (min-width:$screen-sm-min) {
+  .alumni-story {
+    .profile-photo { float:right; width:50%; max-width:500px; margin-left:30px; }
+  }
+}
+
+.alumni-story-preview {
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 40px;
+  clear:both;
+  .photo {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    border-radius: 50%;
+    background-color: #CCC;
+    margin: 0 15px 15px 0;
+  }
+  .title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .subtitle {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  .feature-quote {
+    margin-top:20px;
+  }
+  @media (min-width: $screen-sm-min) {
+    .photo {
+      width: 120px;
+      height: 120px;
+    }
+    .details {
+      padding-left: 145px;
+    }
+  }
+}

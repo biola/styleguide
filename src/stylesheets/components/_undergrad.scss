@@ -1,0 +1,164 @@
+$color-ug-blue:#0193CF;
+$color-ug-teal:#0CB386;
+$color-ug-green:#86A734;
+$color-ug-purple:#8C53A2;
+
+//===============================================
+// Undergrad page header
+//===============================================
+.ug-header {
+  background-color:$color-bg-light;
+  padding-top:0;
+
+  .ug-header-banner {
+    position:relative;
+    height:220px;
+  }
+  .ug-header-student {
+    margin-top:-220px;
+    img {
+      height:350px;
+    }
+  }
+  @media (min-width:$screen-sm-min) {
+    .ug-header-banner {
+      height:240px;
+    }
+    .ug-header-student {
+      margin-top:-240px;
+      img { height:440px; }
+    }
+  }
+  @media (min-width:$screen-md-min) {
+    .ug-header-banner {
+      height:270px;
+    }
+    .ug-header-student {
+      margin-top:-270px;
+      img { height:460px; }
+    }
+  }
+  @media (min-width:$screen-lg-min) {
+    .ug-header-banner {
+      height:340px;
+    }
+    .ug-header-student {
+      margin-top:-340px;
+      img { height:540px; }
+    }
+  }
+  .segment-graphic {
+    position:absolute;
+    height:250px;
+    @media (min-width:$screen-sm-min) {
+      height:300px;
+    }
+    @media (min-width:$screen-md-min) {
+      padding-top:35%;
+    }
+  }
+}
+//===============================================
+// Cards
+//===============================================
+.ug-card {
+  background:$color-bg-dark;
+  color:#DDD;
+  margin:0 0 ($line-height-computed * 0.75);
+  padding:20px 20px 5px;
+  a {
+    color:$link-color-light;
+    &:hover,
+    &:focus {
+      color:$link-hover-color-light;
+    }
+  }
+}
+// Card accents
+.ug-card-red,
+.ug-card-blue,
+.ug-card-teal,
+.ug-card-green,
+.ug-card-purple {
+  border-left-width:10px;
+  border-left-style:solid;
+}
+.ug-card-red { border-left-color:$color-biola-red; }
+.ug-card-blue { border-left-color:$color-ug-blue; }
+.ug-card-teal { border-left-color:$color-ug-teal; }
+.ug-card-green { border-left-color:$color-ug-green; }
+.ug-card-purple { border-left-color:$color-ug-purple; }
+
+//===============================================
+// Videos
+//===============================================
+.ug-vid { // use with bootstrap media object
+  .media-body {
+    vertical-align:middle;
+  }
+  .media-heading {
+    margin-top:10px;
+    margin-bottom:10px;
+    font-weight:normal;
+    a:before {
+      @include fa-icon;
+      content:$fa-var-play-circle;
+      padding-right:8px;
+    }
+  }
+  h3.media-heading {
+    font-size:22px;
+  }
+  .media-left,
+  .media-right {
+    @media (max-width:$screen-xs-max) {
+      display:none; // hide thumbnail on small screens
+    }
+  }
+  .ug-card & {
+    margin:-10px -10px 5px;
+    .media-body {
+      padding-left:10px;
+      padding-right:10px;
+    }
+    .media-left {
+      padding-right:5px;
+    }
+    .media-right {
+      padding-left:5px;
+    }
+  }
+}
+
+//===============================================
+// Undergrad footer
+//===============================================
+.footer-undergrad {
+  background-color:$color-biola-red;
+  text-align:center;
+  padding:30px 0;
+  &, a {
+    color:#FFF;
+  }
+  ul {
+    @include list-unstyled;
+    margin:0;
+  }
+  li {
+    display:inline-block;
+    margin:0 10px;
+  }
+  a {
+    display:inline-block;
+    padding:15px 10px;
+    font-size:16px;
+    &:hover {
+      @include opacity(0.7);
+    }
+  }
+  .fa {
+    margin-right:10px;
+    font-size:1.5em;
+    vertical-align:-10%;
+  }
+}

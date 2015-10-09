@@ -1,0 +1,32 @@
+@mixin reset-media-object {
+  .media-body {
+    width:auto;
+  }
+  .media-left,
+  .media-right,
+  .media-body {
+    display:block;
+  }
+  .media-right {
+    padding-left:0;
+  }
+  .media-left {
+    padding-right:0;
+  }
+}
+
+.media {
+  margin-top:0; // override bootstrap
+  margin-bottom:15px; // instead use bottom for spacing
+}
+.media-object {
+  max-width:none; // remove default responsive img behavior
+}
+
+.media-right {
+  padding-left: $grid-gutter-width/2;
+}
+
+.media-left {
+  padding-right: $grid-gutter-width/2;
+}

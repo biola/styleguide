@@ -1,0 +1,411 @@
+doctype html
+html lang="en"
+  head
+    meta charset="UTF-8"
+    title Biola Styleguide
+
+    / link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"
+    link rel="stylesheet" href="/dist/css/biola-styleguide.css"
+
+    / script src="/bower_components/jquery/dist/jquery.min.js"
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+    script src="/dist/js/biola-styleguide.js"
+
+  body
+    .wrapper-site
+      h2.sg-header Element Defaults
+      .page-segment
+        .container
+          p.sg-label Paragraph, links, strong, emphasis:
+          p Ut enim ad minim veniam, <a href="#">quis nostrud exercitation</a> ullamco laboris nisi ut <strong>aliquip ex ea commodo</strong> consequat. Duis aute <em>irure dolor in</em> reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          p.sg-label Headings:
+          .row
+            .col-sm-4
+              - (1..6).each do |index|
+                | <h#{index}>H#{index} Heading</h#{index}>
+            .col-sm-8
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+              - (1..6).each do |index|
+                | <h#{index}>H#{index} Heading</h#{index}>
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+
+          p.sg-label Blockquotes:
+          blockquote
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          p.sg-label Addresses
+          address
+            strong Biola University
+            br
+            | 13800 Biola Avenue
+            br
+            | La Mirada, CA 90639
+
+          p.sg-label Unordered lists:
+          ul
+            li Lorem ipsum dolor sit amet
+            li Integer molestie lorem at massa
+            li
+              | Facilisis in pretium nisl aliquet
+              ul
+                li Phasellus iaculis neque
+                li Purus sodales ultricies
+                li Vestibulum laoreet porttitor sem
+            li Nulla volutpat aliquam velit
+            li Faucibus porta lacus fringilla vel
+
+          p.sg-label Unordered lists with paragraphs:
+          ul
+            li: p Lorem ipsum dolor sit amet
+            li: p Integer molestie lorem at massa
+            li: p
+              | Facilisis in pretium nisl aliquet
+              ul
+                li: p Phasellus iaculis neque
+                li: p Purus sodales ultricies
+                li: p Vestibulum laoreet porttitor sem
+            li: p Nulla volutpat aliquam velit
+            li: p Faucibus porta lacus fringilla vel
+
+          p.sg-label Ordered lists:
+          ol
+            li Lorem ipsum dolor sit amet
+            li Consectetur adipiscing elit
+            li Integer molestie lorem at massa
+            li Facilisis in pretium nisl aliquet
+            li Eget porttitor lorem
+
+          p.sg-label Description lists:
+          dl
+            dt Mission
+            dd Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            dt Vision
+            dd Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            dt Values
+            dd Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+          p.sg-label Horizontal Rule
+          hr
+
+          p.sg-label Images
+          .row
+            .col-sm-6
+              p: img src="http://placehold.it/960x540"
+            .col-sm-6
+              p Images are responsive by default.
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          p.sg-label Tables
+          table
+            thead
+              tr
+                th Deadline Type
+                th Apply By
+                th Notified By
+            tbody
+              tr
+                td Early Action 1
+                td November 15
+                td January 15
+              tr
+                td Early Action 2
+                td January 15
+                td February 15
+              tr
+                td Regular
+                td March 1
+                td April 1
+
+      h2.sg-header Headings and Type
+      .page-segment
+        .container
+          p.sg-label Page Title
+          h1.page-title Mission, Vision & Values
+
+          p.sg-label Lead paragraph:
+          p.lead Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          p.sg-label Large lead paragraph:
+          p.lead-lg Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          p.sg-label Generic text sizing
+          - [38, 36, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16, 15, 14, 13, 12].each do |value|
+            p class="text-#{value}" #{value} Lorem ipsum dolor sit amet consectetur adipisicing elit
+
+          p.sg-label Feature quote
+          blockquote.feature-quote
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              | &rdquo;
+            footer
+              ' Someone famous in
+              cite title="Source Title" Source Title
+
+          p.sg-label Alumni Story Preview
+          .alumni-story-preview
+            .photo
+            .details
+              .title: a href="#" John Smith
+              .subtitle Composer
+              .subtitle2 B.M. Composition (Oboe) '11
+              blockquote.feature-quote
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  | &rdquo;
+
+
+      h2.sg-header Lists
+      .page-segment
+        .container
+          p.sg-label Border List
+          .row
+            .col-sm-4
+              ul.list-bordered
+                li: a href="#" Lorem ipsum dolor sit amet
+                li: a href="#" Consectetur adipiscing elit
+                li: a href="#" Facilisis in pretium nisl aliquet
+                li: a href="#" Eget porttitor lorem
+                li: a href="#" Integer molestie lorem at massa
+            .col-sm-4
+              ul.list-bordered
+                li Consectetur adipiscing elit
+                li
+                  h4 Accreditation
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                li
+                  | Integer molestie lorem at massa
+                  ul
+                    li Watermelon
+                    li
+                      | Apples
+                      ul
+                        li Macintosh
+                        li Granny Smith
+                        li Red Delicious
+                    li Oranges
+                    li Peaches
+                li Eget porttitor lorem
+            .col-sm-4
+              .panel.panel-default
+                .panel-body
+                  ul.list-bordered
+                    li: a href="#" Lorem ipsum dolor sit amet
+                    li: a href="#" Consectetur adipiscing elit
+                    li: a href="#" Facilisis in pretium nisl aliquet
+                    li: a href="#" Eget porttitor lorem
+                    li: a href="#" Integer molestie lorem at massa
+          p.sg-label Column list
+          ul.list-bordered.list-col-sm-6.list-col-md-4
+            li Lorem ipsum dolor sit amet
+            li Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+            - 12.times do |index|
+              li Lorem ipsum dolor sit amet #{index}
+          p.sg-label Button list
+          ul.list-btn
+            li.dropdown
+              a.btn.btn-default.dropdown-toggle href="#" data-toggle="dropdown"
+                | Contact Us <span class="caret"></span>
+              ul.dropdown-menu
+                li: a href="#" Phone
+                li: a href="#" Email
+            li: a.btn.btn-default href="#" Request Info
+            li: a.btn.btn-default href="#" Apply Now
+            li: a.btn.btn-default href="#" Schedule a Visit
+          p.sg-label Button list horizontal
+          ul.list-btn-horizontal
+            li.dropdown
+              a.btn.btn-default.dropdown-toggle href="#" data-toggle="dropdown"
+                | Contact Us <span class="caret"></span>
+              ul.dropdown-menu
+                li: a href="#" Phone
+                li: a href="#" Email
+            li: a.btn.btn-default href="#" Request Info
+            li: a.btn.btn-default href="#" Apply Now
+            li: a.btn.btn-default href="#" Schedule a Visit
+
+
+          /p.sg-label Alumni Stories
+          /br
+          /= render '/shared/alumni_stories', stories: CustomProfile.where(type: 'Alumni Story').published.limit(3)
+
+          / p.sg-label Profile Carousel
+          / = render '/shared/profile_carousel', people: Person.where(affiliations: 'faculty').has_a_bio.limit(9)
+
+      h2.sg-header Buttons and Links
+      .page-segment
+        .container
+          p.sg-label Standard Bootstrap buttons
+          p
+            - ['default', 'primary', 'success', 'info', 'warning', 'link'].each do |button_type|
+              a class="btn btn-#{button_type}" = button_type.capitalize
+              | &nbsp;
+          p.sg-label Additional buttons
+          p
+            - ['action', 'dark', 'gray'].each do |button_type|
+              a class="btn btn-#{button_type}" = button_type.capitalize
+              | &nbsp;
+          p.sg-label More Link
+          p: a.more-link href="#" View more items
+          p.sg-label File Link
+          p
+            a.file-link href="#" Download file
+            = " (PDF)"
+
+          p.sg-label Top link
+          .nav-top: a href="#" Back to Top
+
+      h2.sg-header Images
+      .page-segment
+        .container
+          p.sg-label Image captions
+          .row
+            .col-sm-6
+              p
+                img src="https://unsplash.it/640/360?image=829"
+                span.img-caption This is a placeholder image!
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          p.sg-label Image Gallery
+          .popup-gallery
+            a title="Normal Photo" href="http://placehold.it/1200x800"
+              img src="http://placehold.it/200x200"
+            a title="Vertical Photo" href="http://placehold.it/500x1200"
+              img src="http://placehold.it/200x200"
+            a title="Panorama Photo" href="http://placehold.it/1800x300"
+              img src="http://placehold.it/200x200"
+            a title="Tiny Photo" href="http://placehold.it/200x200"
+              img src="http://placehold.it/200x200"
+            .clearfix
+
+      h2.sg-header Video and Audio
+      .page-segment
+        .container
+          p.sg-label Popup Videos
+          p
+            a.btn.btn-action.popup-youtube href="https://www.youtube.com/watch?v=LfaoP1U9CtM" YouTube
+            | &nbsp;
+            a.btn.btn-action.popup-youtube href="https://vimeo.com/66605024" Vimeo
+            | &nbsp;
+            a.btn.btn-action.popup-jwvideo href="http://cdn.biola.edu/undergrad/quotes/pq_06_overlay_600x480.mp4" MP4 Video
+            | &nbsp;
+            a.btn.btn-action.popup-jwvideo data-jw-aspectratio="5:4" href="http://cdn.biola.edu/undergrad/quotes/pq_02_overlay_600x480.mp4" MP4 Video Custom Ratio (5:4)
+          p.sg-label Inline Video
+          .row: .col-sm-4
+            p MP4 Video Inline
+            .inline-jwvideo data-jw-file="http://cdn.biola.edu/undergrad/quotes/pq_14_inline_240x280.mp4" data-jw-image="http://media.biola.edu/undergrad/static/images/videos/pq_14_inline_240x280.jpg" data-jw-aspectratio="6:7"
+          p.sg-label Inline Audio
+          .row: .col-xs-12
+            p MP3 Audio Inline
+            .inline-jwaudio data-jw-file="http://cdn.biola.edu/music/km_talkaboutasoul_01_weepingmary.mp3"
+
+      h2.sg-header Segments
+      - ['', 'tint', 'dark', 'bold'].each do |segment_type|
+        div class="page-segment #{segment_type.empty? ? nil : ('segment-' + segment_type) }"
+          .container
+            h2 = (segment_type.empty? ? 'Default' : segment_type.capitalize) + ' Segment'
+            p Lorem <a href="#">ipsum dolor sit amet</a>, consectetur <strong>adipisicing elit</strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            ul.list-btn-horizontal
+              li: a.btn.btn-default href="" Learn More
+              li: a.btn.btn-action href="" Learn More
+            br
+            .row
+              .col-sm-6
+                ul.list-bordered
+                  li: a href="#" Lorem ipsum dolor sit amet
+                  li: a href="#" Consectetur adipiscing elit
+                  li Facilisis in pretium nisl aliquet
+                  li: a href="#" Eget porttitor lorem
+              .col-sm-6
+                .panel.panel-transparent
+                  .panel-heading
+                    h3.panel-title Items
+                  .panel-body
+                    ul.list-bordered
+                      li: a href="#" Lorem ipsum dolor sit amet
+                      li: a href="#" Consectetur adipiscing elit
+                      li Facilisis in pretium nisl aliquet
+
+      h2.sg-header Undergrad Components
+      .page-segment
+        .container
+          p.sg-label Cards
+          .row
+            .col-sm-6
+              .ug-card
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              .ug-card.ug-card-purple
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .ug-card
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            .col-sm-6
+              .ug-card.ug-card-red.text-center
+                p.lead: a href="#"
+                  | Schedule a <strong>Visit</strong>
+              .ug-card.ug-card-blue.text-center
+                p.lead: a href="#"
+                  | Check out <strong>Biola Blogs</strong>
+              .ug-card.ug-card-green.text-center
+                p.lead: a href="#"
+                  | Catch a glimpse of <strong>Life at Biola</strong>
+              .ug-card.ug-card-purple.text-center
+                p.lead: a href="#"
+                  | Check out <strong>Majors and Academics</strong>
+
+          p.sg-label Videos
+          .row
+            .col-sm-7
+              .ug-card
+                .media.ug-vid
+                  .media-left
+                    a href="#": img.media-object src="http://placehold.it/150x100"
+                  .media-body
+                    h3.media-heading: a href="#" Experience Life at Biola
+                    p.lead Watch our campus tour video
+            .col-sm-5
+              .ug-card
+                .media.ug-vid
+                  .media-left
+                    a href="#": img.media-object src="http://placehold.it/100x70"
+                  .media-body
+                    h3.media-heading: a href="#" Watch Video
+
+          p.sg-label Toggle List
+          .row
+            .col-sm-6
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .toggle-list data-toggle="togglelist"
+                - (1..4).each do |index|
+                  .toggle-item
+                    h3.toggle-item-head Section #{index}
+                    .toggle-item-body
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      ul
+                        li Option 1
+                        li Option 2
+                        li Option 3
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            .col-sm-6
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .toggle-list data-toggle="togglelist"
+                - (1..3).each do |index|
+                  .toggle-item
+                    h4.toggle-item-head Section #{index}
+                    .toggle-item-body
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+      .site-breadcrumbs
+        .container
+          ol.breadcrumbs
+            li: a href="#" Home
+            li: a href="#" Undergrad
+            li: a href="#" Academics
+            li: a href="#" Music
