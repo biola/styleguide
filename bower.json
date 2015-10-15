@@ -15,13 +15,13 @@
   "ignore": [
     "**/.*",
     "bower_components",
-    "docs",
+    "node_modules",
+    "src",
     "gulpfile.js",
     "index.html",
-    "node_modules"
+    "index.slim"
   ],
-  "dependencies": {
-    "jquery": ">= 1.9.1",
+  "devDependencies": {
     "magnific-popup": "~1.0.0",
     "owl.carousel": ">= 2.0.0-beta.3",
     "bootstrap-sass": "~3.3.5",

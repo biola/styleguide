@@ -35,14 +35,21 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('dist/css'))
 });
 
+// Copy font files into dist folder
+gulp.task('fonts', function() {
+  return gulp.src([
+      'bower_components/font-awesome-sass/assets/fonts/**/*',
+    ])
+    .pipe(gulp.dest('dist/fonts'))
+})
+
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
   return gulp.src([
-      // 'bower_components/jquery/dist/jquery.js',
       'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
       'bower_components/owl.carousel/dist/owl.carousel.js',
       'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
-      'src/javascripts/*.js',
+      'src/javascripts/components/*.js',
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('biola-styleguide.js'))
@@ -75,12 +82,12 @@ gulp.task('bower', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
   gulp.watch('index.slim', ['docs']);
-  gulp.watch('src/javascripts/*.js', ['lint', 'scripts']);
+  gulp.watch('src/javascripts/components/*.js', ['lint', 'scripts']);
   gulp.watch('src/stylesheets/*.scss', ['sass']);
 });
 
 // build task processes compresses and minifies all files into the dist folder
-gulp.task('build', ['lint', 'sass', 'scripts', 'docs']);
+gulp.task('build', ['lint', 'sass', 'scripts', 'fonts', 'docs']);
 
 // develop task runs build then starts a server and watches for changes.
 gulp.task('develop', ['bower', 'build', 'server', 'watch']);
